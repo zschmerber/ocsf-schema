@@ -132,6 +132,10 @@
       "description": "A list of contextual descriptions of the <code>status, status_code</code> values.",
       "requirement": "optional"
     },
+    "uid": {
+      "description": "The unique identifier of the compliance framework or standard, such as a CIS benchmark ID or regulatory framework identifier.",
+      "requirement": "optional"
+    },
     "status_id": {
       "description": "The normalized status identifier of the compliance check.",
       "requirement": "recommended",

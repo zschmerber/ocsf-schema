@@ -7,6 +7,10 @@
     "name": {
       "description": "The name of a specific campaign associated with a cyber threat.",
       "requirement": "required"
+    },
+    "uid": {
+      "description": "The unique identifier of the campaign, such as a STIX ID or vendor-assigned identifier.",
+      "requirement": "optional"
     }
   }
 }

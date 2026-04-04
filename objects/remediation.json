@@ -27,6 +27,10 @@
     "references": {
       "description": "A list of supporting URL/s, references that help describe the remediation strategy.",
       "requirement": "optional"
+    },
+    "uid": {
+      "description": "The unique identifier of the remediation action, such as a playbook or runbook identifier.",
+      "requirement": "optional"
     }
   }
 }

@@ -13,6 +13,10 @@
       "description": "The classification of the threat actor based on their motivations, capabilities, or affiliations. Common types include nation-state actors, cybercriminal groups, hacktivists, or insider threats.",
       "requirement": "optional"
     },
+    "uid": {
+      "description": "The unique identifier of the threat actor, such as a STIX ID or vendor-assigned identifier.",
+      "requirement": "optional"
+    },
     "type_id": {
       "caption": "Threat Actor Type ID",
       "description": "The normalized datastore resource type identifier.",

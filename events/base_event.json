@@ -7,6 +7,7 @@
     "$include": [
       "profiles/cloud.json",
       "profiles/datetime.json",
+      "profiles/event_graph.json",
       "profiles/host.json",
       "profiles/osint.json",
       "profiles/security_control.json"
@@ -148,6 +149,7 @@
   "profiles": [
     "cloud",
     "datetime",
+    "event_graph",
     "host",
     "osint",
     "security_control"

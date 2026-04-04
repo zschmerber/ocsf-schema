@@ -2506,6 +2506,99 @@
       "description": "The updated managed entity.",
       "type": "managed_entity"
     },
+    "event_graph": {
+      "caption": "Event Graph",
+      "description": "A unified graph projection of all entities and relationships present in the event. Nodes represent entities classified by <code>entity_type_id</code> (users, devices, processes, services, etc.) and edges represent relationships classified by <code>relation_id</code> (member-of, authenticates-to, connects-to, caused-by, depends-on, etc.). Consumers can filter by <code>entity_type_id</code> and <code>relation_id</code> to project domain-specific views such as identity graphs, network topology, temporal causality, data lineage, or software dependencies from a single graph structure. <b>Note:</b> The graph adds payload overhead. For high-volume sources, populate selectively — during enrichment, on sampled events, or when promoted for investigation.",
+      "type": "graph"
+    },
+    "entity_type": {
+      "caption": "Entity Type",
+      "description": "The entity type, normalized to the caption of the <code>entity_type_id</code> value. In the case of <code>Other</code>, it is defined by the source.",
+      "type": "string_t"
+    },
+    "entity_type_id": {
+      "caption": "Entity Type ID",
+      "description": "The normalized identifier of the entity type. Used to classify nodes in graph contexts.",
+      "type": "integer_t",
+      "enum": {
+        "0": {
+          "caption": "Unknown",
+          "description": "The entity type is unknown."
+        },
+        "1": {
+          "caption": "Device",
+          "description": "A physical or virtual device such as a server, workstation, or IoT device."
+        },
+        "2": {
+          "caption": "User",
+          "description": "A user identity."
+        },
+        "3": {
+          "caption": "Process",
+          "description": "An operating system process."
+        },
+        "4": {
+          "caption": "File",
+          "description": "A file or file-like object."
+        },
+        "5": {
+          "caption": "Network Endpoint",
+          "description": "A network-addressable endpoint."
+        },
+        "6": {
+          "caption": "Service",
+          "description": "A software service or daemon."
+        },
+        "7": {
+          "caption": "Application",
+          "description": "A software application."
+        },
+        "8": {
+          "caption": "Account",
+          "description": "A user or service account."
+        },
+        "9": {
+          "caption": "Resource",
+          "description": "A cloud or infrastructure resource."
+        },
+        "10": {
+          "caption": "Vulnerability",
+          "description": "A security vulnerability."
+        },
+        "11": {
+          "caption": "Finding",
+          "description": "A security finding or detection."
+        },
+        "12": {
+          "caption": "Policy",
+          "description": "A security or governance policy."
+        },
+        "13": {
+          "caption": "Group",
+          "description": "A group of users or resources."
+        },
+        "14": {
+          "caption": "Organization",
+          "description": "An organization or tenant."
+        },
+        "15": {
+          "caption": "Database",
+          "description": "A database instance."
+        },
+        "16": {
+          "caption": "Container",
+          "description": "A software container."
+        },
+        "17": {
+          "caption": "Image",
+          "description": "A container or virtual machine image."
+        },
+        "99": {
+          "caption": "Other",
+          "description": "The entity type is not mapped. See the <code>entity_type</code> attribute for the source-specific value."
+        }
+      }
+    },
     "environment_variables": {
       "caption": "Environment Variables",
       "description": "An array of environment variables.",
@@ -5322,6 +5415,150 @@
       "caption": "Relation",
       "description": "The relationship between two entities. See specific usage.",
       "type": "string_t"
+    },
+    "relation_id": {
+      "caption": "Relation ID",
+      "description": "The normalized identifier of the relationship type between two nodes in a graph.",
+      "sibling": "relation",
+      "type": "integer_t",
+      "enum": {
+        "0": {
+          "caption": "Unknown",
+          "description": "The relationship type is unknown."
+        },
+        "1": {
+          "caption": "Owns",
+          "description": "Ownership relationship (e.g., user owns account)."
+        },
+        "2": {
+          "caption": "Member Of",
+          "description": "Membership in a group or organization."
+        },
+        "3": {
+          "caption": "Has Role",
+          "description": "Assignment of a role or permission set."
+        },
+        "4": {
+          "caption": "Authenticates To",
+          "description": "Authentication relationship (e.g., user authenticates to service)."
+        },
+        "5": {
+          "caption": "Can Access",
+          "description": "Access permission relationship (e.g., role can access resource)."
+        },
+        "6": {
+          "caption": "Assumes Role",
+          "description": "Role assumption or delegation (e.g., user assumes admin role)."
+        },
+        "7": {
+          "caption": "Governed By",
+          "description": "Policy governance (e.g., resource governed by policy)."
+        },
+        "8": {
+          "caption": "Delegates To",
+          "description": "Delegation of authority or permissions."
+        },
+        "9": {
+          "caption": "Acts As",
+          "description": "Identity acting in a capacity (e.g., actor acts as user)."
+        },
+        "10": {
+          "caption": "Connects To",
+          "description": "Network connectivity (e.g., endpoint connects to endpoint)."
+        },
+        "11": {
+          "caption": "Routes Through",
+          "description": "Traffic routing (e.g., connection routes through proxy)."
+        },
+        "12": {
+          "caption": "Is In Subnet",
+          "description": "Network containment (e.g., endpoint is in subnet)."
+        },
+        "13": {
+          "caption": "Resolves To",
+          "description": "DNS or name resolution (e.g., hostname resolves to IP)."
+        },
+        "14": {
+          "caption": "Protects",
+          "description": "Security control relationship (e.g., firewall protects network)."
+        },
+        "15": {
+          "caption": "Hosts",
+          "description": "Hosting relationship (e.g., device hosts service)."
+        },
+        "16": {
+          "caption": "Caused By",
+          "description": "Causal relationship between events or findings."
+        },
+        "17": {
+          "caption": "Preceded",
+          "description": "Temporal ordering of events."
+        },
+        "18": {
+          "caption": "Triggered",
+          "description": "One event triggering another."
+        },
+        "19": {
+          "caption": "Correlated With",
+          "description": "Correlation between events or findings."
+        },
+        "20": {
+          "caption": "Escalated To",
+          "description": "Escalation from one finding to another."
+        },
+        "21": {
+          "caption": "Parent Of",
+          "description": "Parent-child hierarchy (e.g., parent process of child process)."
+        },
+        "22": {
+          "caption": "Copied To",
+          "description": "Data was copied from one location to another."
+        },
+        "23": {
+          "caption": "Derived From",
+          "description": "Data was derived or transformed from a source."
+        },
+        "24": {
+          "caption": "Forwarded Through",
+          "description": "Data was forwarded through an intermediary."
+        },
+        "25": {
+          "caption": "Accessed By",
+          "description": "Data was accessed by an entity."
+        },
+        "26": {
+          "caption": "Attached To",
+          "description": "Data is attached to another data object (e.g., file attached to email)."
+        },
+        "27": {
+          "caption": "Depends On",
+          "description": "Software dependency (e.g., application depends on library)."
+        },
+        "28": {
+          "caption": "Runs In",
+          "description": "Execution containment (e.g., application runs in container)."
+        },
+        "29": {
+          "caption": "Built From",
+          "description": "Build origin (e.g., container built from image)."
+        },
+        "30": {
+          "caption": "Patches",
+          "description": "Patch or fix relationship (e.g., update patches vulnerability)."
+        },
+        "31": {
+          "caption": "Vulnerable To",
+          "description": "Vulnerability exposure (e.g., application vulnerable to CVE)."
+        },
+        "32": {
+          "caption": "Executed",
+          "description": "Execution relationship (e.g., process executed file)."
+        },
+        "99": {
+          "caption": "Other",
+          "description": "The relationship type is not mapped. See the <code>relation</code> attribute for the source-specific value."
+        }
+      }
     },
     "relationship": {
       "caption": "Relationship",

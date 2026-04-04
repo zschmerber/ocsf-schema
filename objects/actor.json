@@ -33,6 +33,10 @@
       "description": "The user session from which the activity was initiated.",
       "requirement": "optional"
     },
+    "uid": {
+      "description": "The unique identifier of the actor. See specific usage.",
+      "requirement": "optional"
+    },
     "user": {
       "description": "The user that initiated the activity or the user context from which the activity was initiated.",
       "requirement": "recommended"

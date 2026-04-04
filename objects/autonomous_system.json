@@ -14,6 +14,10 @@
       "group": "context",
       "requirement": "recommended",
       "type": "integer_t"
+    },
+    "uid": {
+      "description": "The unique identifier of the autonomous system, typically the ASN as a string.",
+      "requirement": "optional"
     }
   },
   "constraints": {

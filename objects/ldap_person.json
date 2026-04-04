@@ -88,6 +88,10 @@
     "tags": {
       "description": "The list of tags; <code>{key:value}</code> pairs associated to the user.",
       "requirement": "optional"
+    },
+    "uid": {
+      "description": "The unique identifier of the LDAP person, such as the distinguished name (DN).",
+      "requirement": "optional"
     }
   }
 }

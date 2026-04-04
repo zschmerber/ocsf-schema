@@ -16,6 +16,14 @@
       "description": "A human-readable name or label for the node. Should be descriptive and unique within the graph context.",
       "requirement": "recommended"
     },
+    "entity_type": {
+      "description": "The entity type of this node, normalized to the caption of the <code>entity_type_id</code> value.",
+      "requirement": "optional"
+    },
+    "entity_type_id": {
+      "description": "The normalized identifier of the entity type represented by this node.",
+      "requirement": "optional"
+    },
     "type": {
       "description": "Categorizes the node into a specific class or type. Useful for grouping and filtering nodes.",
       "requirement": "optional"
