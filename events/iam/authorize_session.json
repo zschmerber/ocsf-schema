@@ -1,7 +1,7 @@
 {
   "uid": 3,
   "caption": "Authorize Session",
-  "description": "Authorize Session events report privileges or groups assigned to a new user session, usually at login time.",
+  "description": "Authorize Session events report privileges or groups assigned to a new user session, usually at login time.<p><b>When to use this class:</b> Use when privileges or group memberships are assigned to a specific session at login time or during session elevation. This is the authorization step that typically follows authentication — what the session is <em>allowed to do</em>. <b>Do not use</b> for the authentication itself (use <code>Authentication</code>), for persistent privilege changes to a user that outlast the session (use <code>User Access Management</code>), or for persistent group membership changes (use <code>Group Management</code>).</p>",
   "extends": "iam",
   "name": "authorize_session",
   "associations": {

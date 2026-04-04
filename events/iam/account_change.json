@@ -1,7 +1,7 @@
 {
   "uid": 1,
   "caption": "Account Change",
-  "description": "Account Change events report when specific user account management tasks are performed, such as a user/role being created, changed, deleted, renamed, disabled, enabled, locked out or unlocked.",
+  "description": "Account Change events report when specific user account management tasks are performed, such as a user/role being created, changed, deleted, renamed, disabled, enabled, locked out or unlocked.<p><b>When to use this class:</b> Use when the lifecycle or security state of a user account changes — creating, deleting, enabling, disabling, locking, unlocking, password changes, or MFA factor changes. The key differentiator is that the <em>account itself</em> is being modified, not its access rights. <b>Do not use</b> for assigning or revoking privileges on a user (use <code>User Access Management</code>), changing group membership (use <code>Group Management</code>), or managing non-user entities like devices or policies (use <code>Entity Management</code>).</p>",
   "extends": "iam",
   "name": "account_change",
   "attributes": {

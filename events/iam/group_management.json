@@ -1,7 +1,7 @@
 {
   "uid": 6,
   "caption": "Group Management",
-  "description": "Group Management events report management updates to a group, including updates to membership and permissions.",
+  "description": "Group Management events report management updates to a group, including updates to membership and permissions.<p><b>When to use this class:</b> Use when a group is created, deleted, or modified — including adding/removing users, adding/removing subgroups, and assigning/revoking group-level privileges. The key differentiator is that the <em>group</em> is the primary target. <b>Do not use</b> for individual user privilege changes (use <code>User Access Management</code>), for user account lifecycle changes (use <code>Account Change</code>), or for managing non-group entities (use <code>Entity Management</code>).</p>",
   "extends": "iam",
   "name": "group_management",
   "attributes": {

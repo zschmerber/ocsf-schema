@@ -1,7 +1,7 @@
 {
   "uid": 5,
   "caption": "User Access Management",
-  "description": "User Access Management events report management updates to a user's privileges.",
+  "description": "User Access Management events report management updates to a user's privileges.<p><b>When to use this class:</b> Use when a user's persistent privileges are assigned or revoked — role grants, permission changes, or resource access updates that outlast any single session. The key differentiator is that the <em>user's access rights</em> are changing, not the user account itself. <b>Do not use</b> for account lifecycle changes like create, delete, lock, or password reset (use <code>Account Change</code>), for session-scoped privilege assignment at login time (use <code>Authorize Session</code>), or for group-level privilege changes (use <code>Group Management</code>).</p>",
   "extends": "iam",
   "name": "user_access",
   "attributes": {

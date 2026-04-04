@@ -1,7 +1,7 @@
 {
   "uid": 4,
   "caption": "Entity Management",
-  "description": "Entity Management events report activity by a managed client, a micro service, or a user at a management console. The activity can be a create, read, update, and delete operation on a managed entity.",
+  "description": "Entity Management events report activity by a managed client, a micro service, or a user at a management console. The activity can be a create, read, update, and delete operation on a managed entity.<p><b>When to use this class:</b> Use for CRUD operations on non-user entities such as devices, organizations, policies, email objects, or network zones — anything managed via the <code>managed_entity</code> object. Also use as a catch-all when no more specific IAM class applies. <b>Do not use</b> for user account lifecycle changes (use <code>Account Change</code>), user privilege assignments (use <code>User Access Management</code>), or group membership changes (use <code>Group Management</code>). While those are technically entity management, the specialized classes provide richer attributes for those specific use cases.</p>",
   "extends": "iam",
   "name": "entity_management",
   "attributes": {
